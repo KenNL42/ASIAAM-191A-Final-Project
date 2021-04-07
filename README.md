@@ -1,4 +1,4 @@
-# ASIAM-191A-Final-Project
+# ASIAAM-191A-Final-Project
 
 # Mental Health : Clinics Location
 
