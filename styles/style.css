@@ -40,3 +40,22 @@ header{
    top: 0;
    width: 100%;
 }
+
+#snapshot{
+    word-wrap: break-word;
+}
+
+.stories{
+    border: 1px solid rgb(160, 160, 160);
+    padding: 5px;
+    
+    /* HANDLE LONG WORD THAT BREAKS DIV WIDTH */
+    -ms-word-break: break-all;
+    word-break: break-all;
+    /* Non standard for webkit */
+    word-break: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+}
