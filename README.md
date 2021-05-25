@@ -7,8 +7,4 @@ We are attempting to map the accessibility of mental health resources/clinics ac
 A problem that may arise while collecting data is the lack of considering that different clinics may have different types and varieties of resources that other clinics may or may not have. Clinics from affluent communities may have more resources than those from not-as-affluent communities, and there could also be difficulty in reflecting such. Ethically, we may not be able to fully highlight how the application will be able to contribute to resolving this issue. 
 
 
-I MADE A CHANGE!!!
-
-I also made a change!
-
-THIS IS ANOTHER CHANGE
+Link to website: https://kennl42.github.io/ASIAAM-191A-Final-Project/
