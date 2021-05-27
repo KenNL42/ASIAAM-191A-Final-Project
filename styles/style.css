@@ -15,35 +15,53 @@ header{
 } 
 
 .contents{
-    /* grid-area: sidebar;
-    display:grid;
-    grid-template-columns: repeat(2, 1fr); */
     display: grid;
     grid-template-columns: 1fr 1fr; 
     grid-auto-rows: minmax(5px, auto);
     grid-template-areas: "snapshot right_contents"
 }
 
-/* fix for survey to fit in the iframe */
-#survey {
-    overflow: hidden;
-    /* 16:9 aspect ratio */
-    padding-top: 0%;
-    position: relative;
+.survey {
+    display: flex;
+    justify-content: center;
+    padding: 5px;
 }
 
-#survey iframe {
-   border: 0;
-   height: 100%;
-   left: 0;
-   position: absolute;
-   top: 0;
-   width: 100%;
+.stats{
+    padding: 7px;
 }
 
 #snapshot{
     word-wrap: break-word;
+    height: 50vh;
+    overflow-y: auto;
 }
+
+/* customize scrollbar for snapshot */
+#snapshot::-webkit-scrollbar {
+    width: 20px;
+}
+#snapshot::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+#snapshot::-webkit-scrollbar-thumb {
+    background-color: #d6dee1;
+}
+#snapshot::-webkit-scrollbar-thumb {
+    background-color: #d6dee1;
+    border-radius: 20px;
+}
+#snapshot::-webkit-scrollbar-thumb {
+    background-color: #d6dee1;
+    border-radius: 20px;
+    border: 6px solid transparent;
+    background-clip: content-box;
+}
+#snapshot::-webkit-scrollbar-thumb:hover {
+    background-color: #a8bbbf;
+}
+/* end scrollbar customized*/
 
 .stories{
     border: 1px solid rgb(160, 160, 160);

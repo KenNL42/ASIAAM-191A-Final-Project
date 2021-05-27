@@ -65,6 +65,33 @@ function addStories(data){
   spaceForStories.appendChild(newDiv);
 }
 
+function printWellnessStats(data){
+  var wellness = {};
+  
+  // count all wellness status
+  for (var i in data){
+    emotion = data[i]['whichbestdescribeshowyouvebeenfeeling'];
+    if (emotion != ""){
+      if (wellness[emotion] == null){
+        wellness[emotion] = 0;
+      }
+      wellness[emotion] += 1;
+    }
+  }
+
+  // print on screen
+  for (const [key, value] of Object.entries(wellness)) {
+    const newDiv = document.createElement("div");
+    newDiv.className = "stats";
+    newDiv.innerHTML = key + ":" + value;
+    console.log(key);
+
+    const spaceForStories = document.getElementsByClassName('survey')[0];
+    spaceForStories.appendChild(newDiv);
+  }
+
+}
+
 function formatData(theData){
   const formattedData = [];
   const rows = theData.feed.entry;
@@ -80,4 +107,5 @@ function formatData(theData){
   console.log(formattedData);
   formattedData.forEach(addMarker);
   formattedData.forEach(addStories);
+  printWellnessStats(formattedData);
 }
