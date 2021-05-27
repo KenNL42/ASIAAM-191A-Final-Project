@@ -22,11 +22,45 @@ fetch(url)
   }
 )
 
+let feelingpositive = L.featureGroup();
+let feelingneutral = L.featureGroup();
+let feelingnegative = L.featureGroup();
+
+let layers = {
+  "Positive": feelingpositive,
+  "Neutral": feelingneutral,
+  "Negative": feelingnegative
+}
+
+L.control.layers(null,layers).addTo(map) 
+  
 function addMarker(data){
-  L.marker([data.locationlat,data.locationlong]).addTo(map).bindPopup(`<h2>${data.whatcitydoyoulive}</h2>`)
-  //createButtons(data.locationlat,data.locationlong,data.location)
+  let circleOptions = {
+      radius: 4,
+      fillColor: "#ff7800",
+      color: "#000",
+      weight: 1,
+      opacity: 1,
+      fillOpacity: 0.8
+  }
+  if(data.whichbestdescribeshowyouvebeenfeeling == "Positive"){
+      circleOptions.fillColor = "green"
+      feelingpositive.addLayer(L.circleMarker([data.locationlat,data.locationlong], circleOptions).
+      bindPopup(`<h2>${data.whatcitydoyoulive}</h2>`))
+  }
+ if(data.whichbestdescribeshowyouvebeenfeeling =="Neutral"){
+   circleOptions.fillColor = "yellow"
+   feelingneutral.addLayer(L.circleMarker([data.locationlat,data.locationlong], circleOptions).
+   bindPopup(`<h2>${data.whatcitydoyoulive}</h2>`))
+ }
+ if(data.whichbestdescribeshowyouvebeenfeeling =="Negative"){
+  circleOptions.fillColor = "red"
+  feelingnegative.addLayer(L.circleMarker([data.locationlat,data.locationlong], circleOptions).
+  bindPopup(`<h2>${data.whatcitydoyoulive}</h2>`))
+}
   return data.timestamp
 }
+
 
 /* Don't need to create button for locations for now
 function createButtons(lat,lng,title){
