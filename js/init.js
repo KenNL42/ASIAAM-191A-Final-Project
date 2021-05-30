@@ -142,4 +142,9 @@ function formatData(theData){
   formattedData.forEach(addMarker);
   formattedData.forEach(addStories);
   printWellnessStats(formattedData);
+  feelingpositive.addTo(map)
+  feelingneutral.addTo(map)
+  feelingnegative.addTo(map)
+  let allLayers = L.featureGroup([feelingpositive, feelingneutral, feelingnegative]);
+  map.fitBounds(allLayers.getBounds())
 }
