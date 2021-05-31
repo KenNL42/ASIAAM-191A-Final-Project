@@ -24,11 +24,13 @@ fetch(url)
 let feelingpositive = L.featureGroup();
 let feelingneutral = L.featureGroup();
 let feelingnegative = L.featureGroup();
+let resourcearea = L.featureGroup();
 
 let layers = {
   "Positive": feelingpositive,
   "Neutral": feelingneutral,
-  "Negative": feelingnegative
+  "Negative": feelingnegative,
+  "Resource Locations": resourcearea
 }
 
 L.control.layers(null,layers).addTo(map) 
@@ -56,6 +58,11 @@ function addMarker(data){
   circleOptions.fillColor = "red"
   feelingnegative.addLayer(L.circleMarker([data.locationlat,data.locationlong], circleOptions).
   bindPopup(`<h2>${data.whatcitydoyoulive}</h2>`))
+}
+else{
+  circleOptions.fillColor = "blue"
+  resourcearea.addLayer(L.circleMarker([data.resourcelat,data.resourcelong], circleOptions).
+  bindPopup('<h2>Physical Locations of Resources</h2>'))
 }
   return data.timestamp
 }
@@ -161,7 +168,8 @@ function formatData(theData){
   feelingpositive.addTo(map)
   feelingneutral.addTo(map)
   feelingnegative.addTo(map)
-  let allLayers = L.featureGroup([feelingpositive, feelingneutral, feelingnegative]);
+  resourcearea.addTo(map)
+  let allLayers = L.featureGroup([feelingpositive, feelingneutral, feelingnegative, resourcearea]);
   map.fitBounds(allLayers.getBounds())
 }
 
