@@ -11,6 +11,9 @@
 
         <!-- Leaflet's JavaScript-->
         <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+        
+        <!-- Chart script -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     </head>
     
     <body>
@@ -19,13 +22,27 @@
 
         <div class="contents">
             <div id="snapshot">
-                <b>Snapshot goes here</b>
-                <br>Will replace pointing finger with something else later
+                <p>User Stories</p>
             </div>
             <div class="right_contents">
-                <div class="survey">
-                    <a href='https://forms.gle/jq9P1FYtiWtF2kh28' target="_blank"><button>Take me to Survey</button></a>
+                <div class="right_nav">
+                    <a href='https://forms.gle/jq9P1FYtiWtF2kh28' target="_blank">Survey</a>
+                    <!-- show report -->
+                    <a href="#" id="reportButton">Report</a>
+                    
+                    <div id="reportModal" class="modal">
+                        <!-- Modal content -->
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <a href="#" onclick=loadChart(0)>Emotional Wellness</a>
+                            <a href="#" onclick=loadChart(1)>UCLA Resources Count</a>
+                            <canvas id="chartDiv"></canvas>
+                        </div>
+                    </div>
+                    <a href="#">About</a>
                 </div>
+                
+
                 <div id="resources">
                     <b>UCLA Campus Mental Health Services</b>
                     [need to add links]
@@ -39,6 +56,9 @@
                 </div>
             </div>
         </div>
+        <!-- <canvas id="chartDiv" style="display: block"></canvas> -->
+        <!-- <div id="chartDiv" onclick=showChart()>CHART. Click ME!</div> -->
         <script src="js/init.js"></script>
+        
     </body>
 </html>
