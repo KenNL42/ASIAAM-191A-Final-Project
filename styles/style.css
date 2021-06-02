@@ -39,7 +39,7 @@ h3 {
     justify-content: left;
     text-align: left;
 }
-p {
+p, li{
 	font-family: Arial, Helvetica, sans-serif;
 	color: rgb(61, 61, 61);
     font-size: 18px;
@@ -144,7 +144,7 @@ header{
     overflow: hidden;
 }
 
-.right_nav a {
+.right_nav>a {
     float: left;
     color: #f2f2f2;
     text-align: center;
@@ -153,7 +153,7 @@ header{
     font-size: 17px;
 }
 
-.right_nav a:hover {
+.right_nav>a:hover {
     background-color: #ddd;
     color: black;
 }
@@ -180,20 +180,30 @@ header{
     display: block;
 }
 
-.modal-content a{
+.modal-content>a{
     color: black;
+    text-decoration: none;
+    padding: 7px;
+    font-size: 20px;
+    text-align: center;
+    background-color: #ddd;
+}
+
+.modal-content > a:hover{
+    background-color: #888;
+    color: white;
 }
 
 /* The Close Button */
-.close {
+.aboutClose, .reportClose{
     color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
 }
 
-.close:hover,
-.close:focus {
+.aboutClose:hover, .reportClose:hover
+.aboutClose:focus, .reportClose:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
