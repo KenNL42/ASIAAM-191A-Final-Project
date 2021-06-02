@@ -76,6 +76,10 @@ header{
     grid-template-areas: "snapshot right_contents"
 }
 
+.card{
+    padding:20px;
+  }
+
 .survey {
     display: flex;
     justify-content: center;

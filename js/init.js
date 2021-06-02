@@ -27,17 +27,17 @@ let feelingnegative = L.featureGroup();
 let resourcearea = L.featureGroup();
 
 let layers = {
-  "Positive": feelingpositive,
-  "Neutral": feelingneutral,
-  "Negative": feelingnegative,
-  "Resource Locations": resourcearea
+  "Positive <svg height='10' width='10'><circle cx='5' cy='5' r='4' stroke='black' stroke-width='1' fill='green' /></svg>": feelingpositive,
+  "Neutral<svg height='10' width='10'><circle cx='5' cy='5' r='4' stroke='black' stroke-width='1' fill='yellow' /></svg>": feelingneutral,
+  "Negative<svg height='10' width='10'><circle cx='5' cy='5' r='4' stroke='black' stroke-width='1' fill='red' /></svg>": feelingnegative,
+  "Resource Locations<svg height='10' width='10'><circle cx='5' cy='5' r='4' stroke='black' stroke-width='1' fill='blue' /></svg>": resourcearea
 }
 
-L.control.layers(null,layers).addTo(map) 
+L.control.layers(null,layers, {collapsed:false}).addTo(map)
   
 function addMarker(data){
   let circleOptions = {
-      radius: 4,
+      radius: 5,
       fillColor: "#ff7800",
       color: "#000",
       weight: 1,
@@ -66,7 +66,6 @@ else{
 }
   return data.timestamp
 }
-
 
 // Function to add stories by appending each user story
 function addStories(data){
