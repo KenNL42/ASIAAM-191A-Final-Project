@@ -67,6 +67,30 @@ else{
   return data.timestamp
 }
 
+function createButtons(lat,lng,data){
+  const newDiv = document.createElement("div"); // adds a new button
+
+  if(data.whichbestdescribeshowyouvebeenfeeling == "Positive"){
+    let cardContent = `<b>My emotional well-being</b><br>👉 <p>${data.describeyouremotionalsocialwellbeinginasmuchdetailasyouarecomfortablewith}</p> <br><b>How I manage my emotional well-being</b><br>👉 <p>${data['whatdoyoudotomanageyouremotionalwell-being']}'}`
+    newDiv.id = "button"+data.story; // gives the button a unique id
+        newDiv.innerHTML = cardContent; // gives it the HTML content
+        newDiv.setAttribute("class","card") // add the class called "step" to the button or div
+        newDiv.setAttribute("data-step",newDiv.id) // add a data-step for the button id to know which step we are on
+        newDiv.setAttribute("lat",lat); // sets the latitude 
+        newDiv.setAttribute("lng",lng); // sets the longitude
+        newDiv.addEventListener('click', function(){
+          map.flyTo([lat,lng], 15, 
+            { pan: {
+                animate: false,
+                duration: 0.1
+            }
+            }
+            ); //this is the flyTo from Leaflet
+
+    })
+        }
+  }
+
 // Function to add stories by appending each user story
 function addStories(data){
   
