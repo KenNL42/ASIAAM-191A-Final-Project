@@ -12,6 +12,9 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 
+
+let scroller = scrollama();
+
 fetch(url)
 	.then(response => {
 		return response.json();
@@ -109,6 +112,9 @@ function addStories(data){
     newDiv.innerHTML += data['whichcampusresourcesifanyhaveyoufoundhelpfulinmanagingyourmentalhealth'];
   }
 
+  newDiv.setAttribute("lat",data.locationlat);
+  newDiv.setAttribute("long",data.locationlong);
+
   const spaceForStories = document.getElementById('snapshot')
   spaceForStories.appendChild(newDiv);
 }
@@ -194,6 +200,26 @@ function formatData(theData){
   resourcearea.addTo(map)
   let allLayers = L.featureGroup([feelingpositive, feelingneutral, feelingnegative, resourcearea]);
   map.fitBounds(allLayers.getBounds())
+
+  
+// setup the instance, pass callback functions
+scroller
+.setup({
+  step: ".stories",
+})
+.onStepEnter((response) => {
+  // { element, index, direction }
+  // console.log(response.element.attributes.lat.value);
+    map.flyTo([response.element.attributes.lat.value, response.element.attributes.long.value],10)
+  })
+  .onStepExit((response) => {
+    // { element, index, direction }
+  });
+
+// setup resize event
+window.addEventListener("resize", scroller.resize);
+
+
 }
 
 // switch page between wellness and resources
@@ -252,6 +278,7 @@ function renderChart(chartData, title, divID){
 
 //--------------create modal-------------------//
 // Get the modal
+/*
 var reportModal = document.getElementById("reportModal");
 
 // Get the button that opens the modal
@@ -306,3 +333,4 @@ window.onclick = function(event) {
     aboutModal.style.display = "none";
   }
 }
+*/

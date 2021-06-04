@@ -53,17 +53,24 @@ p, li{
 
 /* end of fonts + styles */
 
+body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "map contents";
+    height: 100vh;
+}
+
 header{
     margin-top: 5%;
     grid-area: header;
 }
 
 #map{
-    height: 50vh;
-    margin-left: 10%;
+    height: 100vh;
+    /*margin-left: 10%;
     margin-right: 10%;
-    grid-area: mappanel;
-    z-index: 1;
+    grid-area: mappanel; */
+    z-index: 100; 
 } 
 
 
@@ -95,7 +102,8 @@ header{
 
 #snapshot{
     word-wrap: break-word;
-    height: 50vh;
+    /* height: 50vh; */
+    height: 100vh;
     overflow-y: auto;
 }
 
