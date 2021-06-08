@@ -3,10 +3,10 @@
 # UCLA Bruin Mental Well-being
 
 ## Table of Contents
-* [Objective] (#objective)
-* Who is being empowered (#who-is-being-empowered)
-* What technology was used (#what-technology-was-used)
-* How can it be Repurposed (#how-can-it-be-repurposed)
+* [Objective](#objective)
+* [Who is being empowered](#who-is-being-empowered)
+* [What technology was used](#what-technology-was-used)
+* [How can it be Repurposed](#how-can-it-be-repurposed)
 
 ## Objective
 We seek to provide details of the UCLA campus entailing the resources the campus has while pinpointing which resources are most often referred to from fellow students who share the same backgrounds or mental health issues. From that, we also want to ensure the idea that the campus provides resources that are able to hit the marks of cultural competency, language awareness, as well as assure people about going to these resources. We want to listen to students’ responses, and distribute them to our website. 
