@@ -18,37 +18,37 @@
     
     <body>
         <header><h1>Bruin Mental Health <br>Barometer</h1><h2>In the midst of the pandemic, UCLA students have never been more isolated from each other, making it difficult to gauge the wellness of the student body. In a time where it is so easy to feel disconnected, we want to ask: </h2><h3>Where are Bruins, and how are they doing?</h3></header>
-        <div class="right_contents">
-        <div class="right_nav">
-                    <a href='https://forms.gle/jq9P1FYtiWtF2kh28' target="_blank">Survey</a>
-                    <!-- show report -->
-                    <a href="#" id="reportButton">Report</a>
-                    
-                    <div id="reportModal" class="modal">
-                        <!-- Modal content -->
-                        <div class="modal-content">
-                            <span class="reportClose">&times;</span>
-                            <a href="#" onclick=loadChart(0)>Emotional Wellness</a>
-                            <a href="#" onclick=loadChart(1)>UCLA Resources Count</a>
-                            <canvas id="chartDiv"></canvas>
-                        </div>
-                    </div>
-                    <a href="#" id="aboutButton">About</a>
-                    <div id="aboutModal" class="modal">
-                        <div class="modal-content">
-                            <span class="aboutClose">&times;</span>
-                            <p>We seek to provide details of the UCLA campus entailing the resources the campus has while pinpointing which resources are most often referred to from fellow students who share the same backgrounds or mental health issues. From that, we also want to ensure the idea that the campus provides resources that are able to hit the marks of cultural competency, language awareness, as well as assure people about going to these resources. We want to listen to students’ responses, and distribute them to our website.</p>
-                            <p>Alongside that, this is just a place for each student to see how some of their fellow Bruins are doing along any area of the spectrum. Although anonymous, seeing the different stories amongst one another could shed some light on everyone's current mood while possibly relating with each other.</p>
-                            <p>In the meantime, we sought to reflect and show some light on these questions below with our project:</p>
-                            <ul>
-                                <li>How does the accessibility of mental health resources affect community use/awareness?</li>
-                                <li>Do all demographics of students find mental health resources to be the same level of accessibility? </li>
-                            </ul>
-                            <p>We use Leaflet to generate the map and markers. We also use HTML/CSS and javascript to process user data.</p>
-                            <p>We provide JSON file of user data to be transparent and open-source. Users are welcome to use our data: <a href="https://spreadsheets.google.com/feeds/list/1RFDPVCED6oKJYgqE04U2lJbO4oSF_ECeC3GcbaKvoZg/o5hgy6r/public/values?alt=json">Link</a></p>
-                        </div>
+        <div class="nav_contents">
+            <div class="right_nav">
+                <a href='https://forms.gle/jq9P1FYtiWtF2kh28' target="_blank">Survey</a>
+                <!-- show report -->
+                <a href="#" id="reportButton">Report</a>
+                
+                <div id="reportModal" class="modal">
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <span class="reportClose">&times;</span>
+                        <a href="#" onclick=loadChart(0)>Emotional Wellness</a>
+                        <a href="#" onclick=loadChart(1)>UCLA Resources Count</a>
+                        <canvas id="chartDiv"></canvas>
                     </div>
                 </div>
+                <a href="#" id="aboutButton">About</a>
+                <div id="aboutModal" class="modal">
+                    <div class="modal-content">
+                        <span class="aboutClose">&times;</span>
+                        <embed type="text/html" src="about.html" width="100%" height="100%">
+                    </div>
+                </div>
+
+                <a href="#" id="resourceButton">Resources</a>
+                <div id="resourceModal" class="modal">
+                    <div class="modal-content">
+                        <span class="resourceClose">&times;</span>
+                        <embed type="text/html" src="resource.html" width="100%" height="100%">
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div id="map"></div>
@@ -57,8 +57,6 @@
         <div class="contents">
             <div id="snapshot">
                 <b>Anonymous Stories</b>
-            </div>
-
             </div>
         </div>
         <!-- <canvas id="chartDiv" style="display: block"></canvas> -->

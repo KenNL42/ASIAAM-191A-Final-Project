@@ -276,6 +276,7 @@ reportClose.onclick = function() {
 window.onclick = function(event) {
   if (event.target == reportModal) {
     reportModal.style.display = "none";
+    aboutModal.style.display = "none";
   }
 }
 
@@ -292,7 +293,7 @@ var aboutClose = document.getElementsByClassName("aboutClose")[0];
 // When the user clicks on the button, open the modal
 aboutBtn.onclick = function() {
   aboutModal.style.display = "block";
-  loadChart(0);
+  // loadChart(0);
 }
 
 // When the user clicks on <span> (x), close the modal
@@ -301,8 +302,27 @@ aboutClose.onclick = function() {
 }
 
 // When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == aboutModal) {
-    aboutModal.style.display = "none";
-  }
+// window.onclick = function(event) {
+//   if (event.target == aboutModal) {
+//     aboutModal.style.display = "none";
+//   }
+// }
+
+var resourceModal = document.getElementById("resourceModal");
+
+// Get the button that opens the modal
+var resourceBtn = document.getElementById("resourceButton");
+
+// Get the <span> element that closes the modal
+var resourceClose = document.getElementsByClassName("resourceClose")[0];
+
+// When the user clicks on the button, open the modal
+resourceBtn.onclick = function() {
+  resourceModal.style.display = "block";
+  // loadChart(0);
+}
+
+// When the user clicks on <span> (x), close the modal
+resourceClose.onclick = function() {
+  resourceModal.style.display = "none";
 }
