@@ -59,7 +59,7 @@ function addMarker(data){
   feelingnegative.addLayer(L.circleMarker([data.locationlat,data.locationlong], circleOptions).
   bindPopup(`<h2>${data.whatcitydoyoulive}</h2>`))
 }
-else{
+if(!data.resourcelat==0 || !data.resourcelong==0){
   circleOptions.fillColor = "blue"
   resourcearea.addLayer(L.circleMarker([data.resourcelat,data.resourcelong], circleOptions).
   bindPopup('<h2>Physical Locations of Resources</h2>'))
