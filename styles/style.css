@@ -71,9 +71,9 @@ header{
     display: grid;
     margin-left: 10%;
     margin-right: 10%;
-    grid-template-columns: 1fr 1fr; 
+    grid-template-columns: 1fr; 
     grid-auto-rows: minmax(5px, auto);
-    grid-template-areas: "snapshot right_contents"
+    grid-template-areas: "snapshot"
 }
 
 .card{
