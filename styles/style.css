@@ -407,6 +407,17 @@ embed {
         padding: 5px 15px;
     }
 
+    .buttons > a:hover{
+        cursor: pointer;
+        border: 2px solid #3A95FF;
+        color:white;
+        border-radius: 15px;
+        margin: 10px;
+        padding: 5px 15px;
+        background-color: #3A95FF;
+        text-decoration: none;
+    }
+
     body{
         display: grid;
         grid-template-columns: repeat(4, 1fr); 
