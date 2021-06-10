@@ -55,6 +55,18 @@ p, li{
     text-align: left;
 }
 
+p, li, h4{
+	font-family: Arial, Helvetica, sans-serif;
+	color: rgb(61, 61, 61);
+    font-size: 14px;
+    margin-left: 10%;
+    margin-right: 10%;
+    line-height: 175%;
+    font-weight: normal;
+    justify-content: left;
+    text-align: left;
+}
+
 /* end of fonts + styles */
 
 header{
