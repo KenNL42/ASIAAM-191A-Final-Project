@@ -159,13 +159,13 @@ function addStories(data){
   
   const newDiv = document.createElement("div");
   newDiv.className = "stories";
-  newDiv.innerHTML = "<b>My emotional well-being</b><br>👉";
+  newDiv.innerHTML = "<b>How Are You Doing?</b><br>";
   newDiv.innerHTML += data.describeyouremotionalsocialwellbeinginasmuchdetailasyouarecomfortablewith;
-  newDiv.innerHTML += "<br><b>How I manage my emotional well-being</b><br>👉";
+  newDiv.innerHTML += "<br><b><br>What's helped you?</b><br>";
   newDiv.innerHTML += data['whatdoyoudotomanageyouremotionalwell-being'];
 
   if (data.whichcampusresourcesifanyhaveyoufoundhelpfulinmanagingyourmentalhealth){
-    newDiv.innerHTML += "<br><b>Campus resources that I used</b><br>👉";
+    newDiv.innerHTML += "<br><b><br>What campus resources have you used?</b><br>";
     newDiv.innerHTML += data['whichcampusresourcesifanyhaveyoufoundhelpfulinmanagingyourmentalhealth'];
   }
 
