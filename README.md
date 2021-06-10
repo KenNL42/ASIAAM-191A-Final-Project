@@ -6,6 +6,7 @@
 * [Objective](#objective)
 * [Who is being empowered](#who-is-being-empowered)
 * [What technology was used](#what-technology-was-used)
+* [Screenshots and Features] (#screenshots-and-features
 * [How can it be Repurposed](#how-can-it-be-repurposed)
 
 ## Objective
@@ -30,6 +31,12 @@ We use HTML/CSS and javascript to build the website and process user data. [Leaf
 We provide JSON file of user data to be transparent and open-source. Users are welcome to use our data: https://spreadsheets.google.com/feeds/list/1RFDPVCED6oKJYgqE04U2lJbO4oSF_ECeC3GcbaKvoZg/o5hgy6r/public/values?alt=json
 
 Link to website: https://kennl42.github.io/ASIAAM-191A-Final-Project/index.html
+
+##Screenshots With Features
+![](screenshots/screenshot1.png)
+![](screenshots/screenshot3.png)
+![](screenshots/screenshot4.png)
+![](screenshots/screenshot6.png)
 
 ## How can it be repurposed
 As this is aimed towards UCLA students, our website is open for changes in order to fit the needs and other suitabilities of UCLA students as time passes. Documentation of this website and access to code will be open for the general public so that documentation and improvements made can help benefit a variety of people. This will also create long-term maintenance of the site and its evolving fundamentals as it changes for whatever suits the community of Bruins best during the moment. 
