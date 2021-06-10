@@ -35,7 +35,11 @@ Link to website: https://kennl42.github.io/ASIAAM-191A-Final-Project/index.html
 ## Screenshots With Features
 ![](screenshots/screenshot1.png)
 ![](screenshots/screenshot3.png)
+* Within this map, each pop-up will display the city that Bruins are currently living in, as well as the ways that they take care of their emotional well-beings!
+
 ![](screenshots/screenshot4.png)
+* Just like according to the legend on the map, the graph will how the overall mood of Bruins from when they filled out the survey, and this chart will update as a person filling out the survey describes they mood they are currently in. 
+
 ![](screenshots/screenshot6.png)
 
 ## How can it be repurposed
