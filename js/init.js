@@ -187,6 +187,8 @@ function formatData(theData){
 
   global_formatted_data = formattedData; // store to global variable so data is used in graph
 
+  loadChart(0);
+
   // show markers
   feelingpositive.addTo(map)
   feelingneutral.addTo(map)
@@ -212,7 +214,7 @@ function renderChart(chartData, title, divID){
   // delete previous canvas and append a new one
   canvas = document.createElement('canvas');
   canvas.setAttribute("id",divID);
-  parent = document.getElementsByClassName("modal-content")[0];
+  parent = document.getElementById("reportModal");
   parent.appendChild(canvas);
 
   // create a chart
@@ -230,8 +232,8 @@ function renderChart(chartData, title, divID){
       }]
     },
     options: {
-      responsive: true,
-      maintainAspectRatio: true,
+      responsive: false,
+      maintainAspectRatio: false,
       scales: {
         yAxes: [{
           ticks: {
