@@ -191,27 +191,27 @@ header{
 }
 
 /* customize scrollbar for snapshot */
-#snapshot::-webkit-scrollbar {
+::-webkit-scrollbar {
     width: 20px;
 }
-#snapshot::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
     background-color: transparent;
 }
 
-#snapshot::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
     background-color: #d6dee1;
 }
-#snapshot::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
     background-color: #d6dee1;
     border-radius: 20px;
 }
-#snapshot::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
     background-color: #d6dee1;
     border-radius: 20px;
     border: 6px solid transparent;
     background-clip: content-box;
 }
-#snapshot::-webkit-scrollbar-thumb:hover {
+::-webkit-scrollbar-thumb:hover {
     background-color: #a8bbbf;
 }
 /* end scrollbar customized*/
@@ -252,7 +252,7 @@ header{
     background-color: #ddd;
     color: black;
 }
-
+*/
 .modal {
     display: none;
     position: fixed;
@@ -291,7 +291,7 @@ header{
 }
 
 /* The Close Button */
-/*
+
 .aboutClose, .reportClose, .resourceClose{
     color: #aaa;
     float: right;
@@ -304,10 +304,7 @@ header{
     color: black;
     text-decoration: none;
     cursor: pointer;
-} */
-
-
-
+}
 
 canvas {
     width:100% !important;

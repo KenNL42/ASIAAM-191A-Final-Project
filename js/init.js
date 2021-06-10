@@ -246,6 +246,8 @@ function renderChart(chartData, title, divID){
 }
 
 //--------------create modal-------------------//
+
+/*
 // Get the modal
 var reportModal = document.getElementById("reportModal");
 
@@ -274,6 +276,7 @@ window.onclick = function(event) {
     aboutModal.style.display = "none";
   }
 }
+*/
 
 //----------about section-------------
 // Get the modal
@@ -297,11 +300,12 @@ aboutClose.onclick = function() {
 }
 
 // When the user clicks anywhere outside of the modal, close it
-// window.onclick = function(event) {
-//   if (event.target == aboutModal) {
-//     aboutModal.style.display = "none";
-//   }
-// }
+window.onclick = function(event) {
+  if (event.target == aboutModal) {
+    aboutModal.style.display = "none";
+  }
+}
+/*
 
 var resourceModal = document.getElementById("resourceModal");
 
@@ -322,3 +326,4 @@ resourceClose.onclick = function() {
   resourceModal.style.display = "none";
 }
 
+*/
