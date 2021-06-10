@@ -24,6 +24,8 @@ We aim to empower the voices of UCLA students to uplift one another (more will b
 ## What technology was used
 We use Leaflet to generate the map and markers. We also use HTML/CSS and javascript to process user data.
 
+We use HTML/CSS and javascript to build the website and process user data. [Leaflet](https://leafletjs.com/) is used to create the map and markers of users and resource location. We also use [Chart.js](https://www.chartjs.org/) to display statistics of user stories and locations. 
+
 We provide JSON file of user data to be transparent and open-source. Users are welcome to use our data: https://spreadsheets.google.com/feeds/list/1RFDPVCED6oKJYgqE04U2lJbO4oSF_ECeC3GcbaKvoZg/o5hgy6r/public/values?alt=json
 
 Link to website: https://kennl42.github.io/ASIAAM-191A-Final-Project/index.html
