@@ -28,9 +28,9 @@ let resourcearea = L.featureGroup();
 
 let layers = {
   "Positive <svg height='10' width='10'><circle cx='5' cy='5' r='4' stroke='black' stroke-width='1' fill='green' /></svg>": feelingpositive,
-  "Neutral<svg height='10' width='10'><circle cx='5' cy='5' r='4' stroke='black' stroke-width='1' fill='yellow' /></svg>": feelingneutral,
-  "Negative<svg height='10' width='10'><circle cx='5' cy='5' r='4' stroke='black' stroke-width='1' fill='red' /></svg>": feelingnegative,
-  "Resource Locations<svg height='10' width='10'><circle cx='5' cy='5' r='4' stroke='black' stroke-width='1' fill='blue' /></svg>": resourcearea
+  "Neutral <svg height='10' width='10'><circle cx='5' cy='5' r='4' stroke='black' stroke-width='1' fill='yellow' /></svg>": feelingneutral,
+  "Negative <svg height='10' width='10'><circle cx='5' cy='5' r='4' stroke='black' stroke-width='1' fill='red' /></svg>": feelingnegative,
+  "Resource Locations <svg height='10' width='10'><circle cx='5' cy='5' r='4' stroke='black' stroke-width='1' fill='blue' /></svg>": resourcearea
 }
 
 L.control.layers(null,layers, {collapsed:false}).addTo(map)
@@ -62,28 +62,94 @@ function addMarker(data){
 if(!data.resourcelat==0 || !data.resourcelong==0){
   circleOptions.fillColor = "blue"
   resourcearea.addLayer(L.circleMarker([data.resourcelat,data.resourcelong], circleOptions).
-  bindPopup('<b>Physical Locations of Resources</b>'))
+  bindPopup('<b>Users\' Physical Locations of Resources</b>'))
 }
-  return data.timestamp
+  // return data.timestamp
 }
-/*
-function addStories(data)
-{
-  //NOTE: very hacky way to find story divs.. 
-  let divs = document.getElementById("sidebar").getElementsByTagName("div"); 
 
-  console.log(divs.length);
-  for(let i = 0; i < divs.length; i++)
-  {
-    console.log("adding story"); 
+// add markers for location of physical resources
+// need to rework this for scalability
+function addResourcesMarker(){
+  let circleOptions = {
+    radius: 8,
+    fillColor: "#ff7800",
+    color: "#000",
+    weight: 1,
+    opacity: 1,
+    fillOpacity: 0.8
+  }
 
-    divs[i].setAttribute("lat",data.locationlat); 
-    divs[i].setAttribute("lng",data.locationlong);
-
-    //Todo: Add buttons based on the keywords in the story 
+  // manually input data
+  data = {
+    0: {
+      name: "Campus Assault Resources and Education (CARE)",
+      Address: "330 De Neve Dr. 205 Covel Commons, Los Angeles, CA, 90095",
+      lat: 34.075170,
+      long: -118.453640
+    },
+    1: {
+      name: "Collegiate Recovery Program",
+      Address: "Student Activities Center, Suite B44 220 Westwood Plaza Box 951453",
+      lat: 34.071538,
+      long: -118.444151
+    },
+    2: {
+      name: "Counseling and Psychological Services (CAPS)",
+      Address: "John Wooden Center West, 221 Westwood Plaza, Box 951556, Los Angeles, CA 90095-1556",
+      lat: 34.072880,
+      long: -118.444850
+    },
+    3: {
+      name: "PEERS Friendship Program",
+      Address: "300 UCLA Medical Plaza Los Angeles, CA 90095-6967",
+      lat: 34.064400,
+      long: -118.446070
+    },
+    4: {
+      name: "UCLA Psychology Clinic",
+      Address: "220 Westwood Plaza #105, Los Angeles, CA 90095",
+      lat: 34.072808,
+      long: -118.444913
+    },
+    5: {
+      name: "Acacia",
+      Address: "1019 Gayley Ave | Floor 2 Los Angeles, CA 90024",
+      lat: 34.0613855,
+      long: -118.447897
+    },
+    6: {
+      name: "Samahang Pilipino Education and Retention",
+      Address: "220 Westwood Plaza #105, Los Angeles, CA 90095",
+      lat: 34.072808,
+      long: -118.444913
+    },
+    7: {
+      name: "MEChA Calmécac",
+      Address: "220 Westwood Plaza #105, Los Angeles, CA 90095",
+      lat: 34.072808,
+      long: -118.444913
+    },
+    8: {
+      name: "Retention of American Indians Now!",
+      Address: "220 Westwood Plaza #105, Los Angeles, CA 90095",
+      lat: 34.072808,
+      long: -118.444913
+    },
+    9: {
+      name: "Southeast Asian Campus Learning Education and Retention",
+      Address: "220 Westwood Plaza #105, Los Angeles, CA 90095",
+      lat: 34.072808,
+      long: -118.444913
+    }
+  }
+  for (let [key, value] of Object.entries(data)) {
+    circleOptions.fillColor = "blue"
+    resourcearea.addLayer(L.circleMarker([value.lat, value.long], circleOptions).
+    bindPopup(`<b>${value.name}</b>`))
   }
 }
-*/
+
+
 
 // Function to add stories by appending each user story
 function addStories(data){
@@ -158,7 +224,6 @@ function displayResourceCount(data){
   temp['x'] = Object.keys(resource_dict);
   temp['y'] = Object.values(resource_dict);
   
-  // console.log(temp)
   renderChart(temp, "Resources Count", "chartDiv");
 }
 
@@ -190,6 +255,8 @@ function formatData(theData){
   resourcearea.addTo(map)
   let allLayers = L.featureGroup([feelingpositive, feelingneutral, feelingnegative, resourcearea]);
   map.fitBounds(allLayers.getBounds())
+
+  addResourcesMarker()
 }
 
 // switch page between wellness and resources
