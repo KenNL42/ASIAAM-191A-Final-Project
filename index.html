@@ -14,6 +14,9 @@
         
         <!-- Chart script -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+        <!-- for viewing size responsive -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     </head>
     
     <body>
@@ -23,8 +26,14 @@
         
         <div class="buttons">
             <a href='https://forms.gle/jq9P1FYtiWtF2kh28' target="_blank">Survey</a>
-            <a>Resources</a>
-            <a>About</a>
+            <a href="resource.html">Resources</a>
+            <a id="aboutButton">About</a>
+            <div id="aboutModal" class="modal">
+                <div class="modal-content">
+                    <span class="aboutClose">&times;</span>
+                    <embed type="text/html" src="about.html" width="100%" height="100%">
+                </div>
+            </div>
         </div>
         
         <div class="intro">
@@ -71,11 +80,17 @@
             <p>This map shows the current self-reported mental health of Bruins in different areas. Use the filters to positive, neutral, or negative stories, and click the markers to see additional details.</p>
         </div>
             
-        <!-- <div class="contents"> -->
-            <div id="snapshot">
-                <p>User Stories</p>
-            </div>
-        <!-- </div> -->
+        <div id="snapshotTitle">
+            <p>User Stories</p>
+        </div>
+
+        <div id="snapshot">
+        </div>
+
+        <div id="reportTitle">
+            <p>Statistics Report</p>
+        </div>
+        
         <div id="reportModal" class="chart">
             <!-- <span class="reportClose">&times;</span> -->
             <a onclick=loadChart(0)>Emotional Wellness</a>

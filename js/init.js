@@ -47,17 +47,17 @@ function addMarker(data){
   if(data.whichbestdescribeshowyouvebeenfeeling == "Positive"){
       circleOptions.fillColor = "green"
       feelingpositive.addLayer(L.circleMarker([data.locationlat,data.locationlong], circleOptions).
-      bindPopup(`<h3>${data.whatcitydoyoulive}</h3> <h4>${"How I Handle my emotional well-being: " + data['whatdoyoudotomanageyouremotionalwell-being']}</h4>`))
+      bindPopup(`<h3>${data.whatcitydoyoulive}</h3> <p>${"How I Handle my emotional well-being: " + data['whatdoyoudotomanageyouremotionalwell-being']}</p>`))
   }
  if(data.whichbestdescribeshowyouvebeenfeeling =="Neutral"){
    circleOptions.fillColor = "yellow"
    feelingneutral.addLayer(L.circleMarker([data.locationlat,data.locationlong], circleOptions).
-   bindPopup(`<h3>${data.whatcitydoyoulive}</h3> <h4>${"How I Handle my emotional well-being: " + data['whatdoyoudotomanageyouremotionalwell-being']}</h4>`))
+   bindPopup(`<h3>${data.whatcitydoyoulive}</h3> <p>${"How I Handle my emotional well-being: " + data['whatdoyoudotomanageyouremotionalwell-being']}</p>`))
  }
  if(data.whichbestdescribeshowyouvebeenfeeling =="Negative"){
   circleOptions.fillColor = "red"
   feelingnegative.addLayer(L.circleMarker([data.locationlat,data.locationlong], circleOptions).
-  bindPopup(`<h3>${data.whatcitydoyoulive}</h3> <h4>${"How I Handle my emotional well-being: " + data['whatdoyoudotomanageyouremotionalwell-being']}</h4>`))
+  bindPopup(`<h3>${data.whatcitydoyoulive}</h3> <p>${"How I Handle my emotional well-being: " + data['whatdoyoudotomanageyouremotionalwell-being']}</p>`))
 }
 if(!data.resourcelat==0 || !data.resourcelong==0){
   circleOptions.fillColor = "blue"
@@ -66,7 +66,7 @@ if(!data.resourcelat==0 || !data.resourcelong==0){
 }
   return data.timestamp
 }
-
+/*
 function addStories(data)
 {
   //NOTE: very hacky way to find story divs.. 
@@ -83,6 +83,7 @@ function addStories(data)
     //Todo: Add buttons based on the keywords in the story 
   }
 }
+*/
 
 // Function to add stories by appending each user story
 function addStories(data){
@@ -174,13 +175,13 @@ function formatData(theData){
     }
     formattedData.push(formattedRow);
   }
-  console.log(formattedData);
+  // console.log(formattedData);
   formattedData.forEach(addMarker);
   formattedData.forEach(addStories);
 
   global_formatted_data = formattedData; // store to global variable so data is used in graph
 
-  loadChart(0);
+  loadChart(0); // show wellness count as default
 
   // show markers
   feelingpositive.addTo(map)
@@ -246,35 +247,6 @@ function renderChart(chartData, title, divID){
 }
 
 //--------------create modal-------------------//
-// Get the modal
-var reportModal = document.getElementById("reportModal");
-
-// Get the button that opens the modal
-var reportBtn = document.getElementById("reportButton");
-
-// Get the <span> element that closes the modal
-var reportClose = document.getElementsByClassName("reportClose")[0];
-
-// When the user clicks on the button, open the modal
-reportBtn.onclick = function() {
-  reportModal.style.display = "block";
-  loadChart(0);
-}
-
-// When the user clicks on <span> (x), close the modal
-reportClose.onclick = function() {
-  reportModal.style.display = "none";
-  aboutModal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == reportModal) {
-    reportModal.style.display = "none";
-    aboutModal.style.display = "none";
-  }
-}
-
 //----------about section-------------
 // Get the modal
 var aboutModal = document.getElementById("aboutModal");
@@ -297,28 +269,8 @@ aboutClose.onclick = function() {
 }
 
 // When the user clicks anywhere outside of the modal, close it
-// window.onclick = function(event) {
-//   if (event.target == aboutModal) {
-//     aboutModal.style.display = "none";
-//   }
-// }
-
-var resourceModal = document.getElementById("resourceModal");
-
-// Get the button that opens the modal
-var resourceBtn = document.getElementById("resourceButton");
-
-// Get the <span> element that closes the modal
-var resourceClose = document.getElementsByClassName("resourceClose")[0];
-
-// When the user clicks on the button, open the modal
-resourceBtn.onclick = function() {
-  resourceModal.style.display = "block";
-  // loadChart(0);
+window.onclick = function(event) {
+  if (event.target == aboutModal) {
+    aboutModal.style.display = "none";
+  }
 }
-
-// When the user clicks on <span> (x), close the modal
-resourceClose.onclick = function() {
-  resourceModal.style.display = "none";
-}
-
