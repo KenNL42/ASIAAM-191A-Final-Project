@@ -326,3 +326,4 @@ resourceBtn.onclick = function() {
 resourceClose.onclick = function() {
   resourceModal.style.display = "none";
 }
+
