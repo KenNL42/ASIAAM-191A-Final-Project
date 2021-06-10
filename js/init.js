@@ -47,17 +47,17 @@ function addMarker(data){
   if(data.whichbestdescribeshowyouvebeenfeeling == "Positive"){
       circleOptions.fillColor = "green"
       feelingpositive.addLayer(L.circleMarker([data.locationlat,data.locationlong], circleOptions).
-      bindPopup(`<h3>${data.whatcitydoyoulive}</h3> <h4>${"How I Handle my emotional well-being: " + data['whatdoyoudotomanageyouremotionalwell-being']}</h4>`))
+      bindPopup(`<h3>${data.whatcitydoyoulive}</h3> <p>${"How I Handle my emotional well-being: " + data['whatdoyoudotomanageyouremotionalwell-being']}</p>`))
   }
  if(data.whichbestdescribeshowyouvebeenfeeling =="Neutral"){
    circleOptions.fillColor = "yellow"
    feelingneutral.addLayer(L.circleMarker([data.locationlat,data.locationlong], circleOptions).
-   bindPopup(`<h3>${data.whatcitydoyoulive}</h3> <h4>${"How I Handle my emotional well-being: " + data['whatdoyoudotomanageyouremotionalwell-being']}</h4>`))
+   bindPopup(`<h3>${data.whatcitydoyoulive}</h3> <p>${"How I Handle my emotional well-being: " + data['whatdoyoudotomanageyouremotionalwell-being']}</p>`))
  }
  if(data.whichbestdescribeshowyouvebeenfeeling =="Negative"){
   circleOptions.fillColor = "red"
   feelingnegative.addLayer(L.circleMarker([data.locationlat,data.locationlong], circleOptions).
-  bindPopup(`<h3>${data.whatcitydoyoulive}</h3> <h4>${"How I Handle my emotional well-being: " + data['whatdoyoudotomanageyouremotionalwell-being']}</h4>`))
+  bindPopup(`<h3>${data.whatcitydoyoulive}</h3> <p>${"How I Handle my emotional well-being: " + data['whatdoyoudotomanageyouremotionalwell-being']}</p>`))
 }
 if(!data.resourcelat==0 || !data.resourcelong==0){
   circleOptions.fillColor = "blue"
