@@ -374,10 +374,18 @@ embed {
 
 /* For phone screen*/
 
-@media only screen and (max-width: 600px) {
+@media (max-width: 600px) {
+    h1{
+        font-size: 40px;
+    }
+
     .buttons{
         display: flex;
-        flex-wrap: wrap;
+        flex-wrap: wrap;   
+    }
+
+    .buttons > a{
+        padding: 5px 15px;
     }
 
     body{
@@ -403,9 +411,15 @@ embed {
         margin-left: 5%;
     }
 
+    #snapshot{
+        height: 40vh;
+    }
+
     .chart{
         padding: 0 10%;
         height: 350px;
+        display: flex;
+        flex-wrap: wrap;
     }
 
 }
