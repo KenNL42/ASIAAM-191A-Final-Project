@@ -19,7 +19,8 @@ In the meantime, we sought to reflect and show some light on these questions bel
 * Do all demographics of students find mental health resources to be the same level of accessibility? 
 
 ## Who is being empowered
-We aim to empower the voices of UCLA students to uplift one another (more will be written here later)
+Our application was made for current UCLA students. We hope to empower the UCLA community in two ways. First, we want to empower students to add their voice to the collective by giving them an opportuninty to tell their own mental health story. We designed the survey to avoid leading questions, and have allowed for the flexible answers (students can disclose as little or as much as they'd like).
+Second, we want to empower those using the site to seek resources, if needed. There are many obstacles impeding students from accessing mental health resources. Some of this is simple awareness, but there are also real barriers to acessing resources such as affordability, cultural competency of the resource, etc. To hopefully increase transparency, we have created filters for what each campus resource offers.
 
 ## What technology was used
 We use Leaflet to generate the map and markers. We also use HTML/CSS and javascript to process user data.

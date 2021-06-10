@@ -37,7 +37,7 @@ L.control.layers(null,layers, {collapsed:false}).addTo(map)
   
 function addMarker(data){
   let circleOptions = {
-      radius: 5,
+      radius: 8,
       fillColor: "#ff7800",
       color: "#000",
       weight: 1,
@@ -47,49 +47,42 @@ function addMarker(data){
   if(data.whichbestdescribeshowyouvebeenfeeling == "Positive"){
       circleOptions.fillColor = "green"
       feelingpositive.addLayer(L.circleMarker([data.locationlat,data.locationlong], circleOptions).
-      bindPopup(`<h2>${data.whatcitydoyoulive}</h2>`))
+      bindPopup(`<h3>${data.whatcitydoyoulive}</h3> <h4>${"How I Handle my emotional well-being: " + data['whatdoyoudotomanageyouremotionalwell-being']}</h4>`))
   }
  if(data.whichbestdescribeshowyouvebeenfeeling =="Neutral"){
    circleOptions.fillColor = "yellow"
    feelingneutral.addLayer(L.circleMarker([data.locationlat,data.locationlong], circleOptions).
-   bindPopup(`<h2>${data.whatcitydoyoulive}</h2>`))
+   bindPopup(`<h3>${data.whatcitydoyoulive}</h3> <h4>${"How I Handle my emotional well-being: " + data['whatdoyoudotomanageyouremotionalwell-being']}</h4>`))
  }
  if(data.whichbestdescribeshowyouvebeenfeeling =="Negative"){
   circleOptions.fillColor = "red"
   feelingnegative.addLayer(L.circleMarker([data.locationlat,data.locationlong], circleOptions).
-  bindPopup(`<h2>${data.whatcitydoyoulive}</h2>`))
+  bindPopup(`<h3>${data.whatcitydoyoulive}</h3> <h4>${"How I Handle my emotional well-being: " + data['whatdoyoudotomanageyouremotionalwell-being']}</h4>`))
 }
 if(!data.resourcelat==0 || !data.resourcelong==0){
   circleOptions.fillColor = "blue"
   resourcearea.addLayer(L.circleMarker([data.resourcelat,data.resourcelong], circleOptions).
-  bindPopup('<h2>Physical Locations of Resources</h2>'))
+  bindPopup('<b>Physical Locations of Resources</b>'))
 }
   return data.timestamp
 }
 
-function createButtons(lat,lng,data){
-  const newDiv = document.createElement("div"); // adds a new button
+function addStories(data)
+{
+  //NOTE: very hacky way to find story divs.. 
+  let divs = document.getElementById("sidebar").getElementsByTagName("div"); 
 
-  if(data.whichbestdescribeshowyouvebeenfeeling == "Positive"){
-    let cardContent = `<b>My emotional well-being</b><br>👉 <p>${data.describeyouremotionalsocialwellbeinginasmuchdetailasyouarecomfortablewith}</p> <br><b>How I manage my emotional well-being</b><br>👉 <p>${data['whatdoyoudotomanageyouremotionalwell-being']}'}`
-    newDiv.id = "button"+data.story; // gives the button a unique id
-        newDiv.innerHTML = cardContent; // gives it the HTML content
-        newDiv.setAttribute("class","card") // add the class called "step" to the button or div
-        newDiv.setAttribute("data-step",newDiv.id) // add a data-step for the button id to know which step we are on
-        newDiv.setAttribute("lat",lat); // sets the latitude 
-        newDiv.setAttribute("lng",lng); // sets the longitude
-        newDiv.addEventListener('click', function(){
-          map.flyTo([lat,lng], 15, 
-            { pan: {
-                animate: false,
-                duration: 0.1
-            }
-            }
-            ); //this is the flyTo from Leaflet
+  console.log(divs.length);
+  for(let i = 0; i < divs.length; i++)
+  {
+    console.log("adding story"); 
 
-    })
-        }
+    divs[i].setAttribute("lat",data.locationlat); 
+    divs[i].setAttribute("lng",data.locationlong);
+
+    //Todo: Add buttons based on the keywords in the story 
   }
+}
 
 // Function to add stories by appending each user story
 function addStories(data){
@@ -328,3 +321,4 @@ resourceBtn.onclick = function() {
 resourceClose.onclick = function() {
   resourceModal.style.display = "none";
 }
+

@@ -43,6 +43,33 @@ h3 {
     justify-content: left;
     text-align: left;
 }
+
+h4 {
+    font-family: Arial, Helvetica, sans-serif;
+	color: rgb(61, 61, 61);
+    font-size: 18px;
+    margin-left: 10%;
+    margin-right: 10%;
+    line-height: 175%;
+    font-weight: bold;
+    justify-content: left;
+    text-align: left;
+
+}
+
+h5 {
+    font-family: Arial, Helvetica, sans-serif;
+	color: rgb(45, 73, 126);
+    font-size: 16px;
+    margin-left: 10%;
+    margin-right: 10%;
+    line-height: 175%;
+    font-weight: bold;
+    justify-content: left;
+    text-align: left;
+
+}
+
 p, li{
 	font-family: Arial, Helvetica, sans-serif;
 	color: rgb(61, 61, 61);
@@ -279,6 +306,9 @@ header{
     cursor: pointer;
 } */
 
+
+
+
 canvas {
     width:100% !important;
     height:80% !important;
@@ -289,3 +319,64 @@ embed {
     height: 90% !important;
     width: 100% !important;
 }
+
+
+/* resources section */
+
+.resource_card{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-left: 10%;
+    margin-right: 10%;
+    border: 1px solid rgb(228, 228, 228);
+    box-shadow: 0.5px 0.5px 9px 2px #e0e7e7;
+}
+
+.container {
+    overflow: hidden;
+  }
+  
+  .filterDiv {
+
+    float: left;
+    background-color: #ffffff;
+    color: #ffffff;
+    margin-left: 10%;
+    margin-right: 10%;
+    text-align: center;
+    margin: 2px;
+    display: none; /* Hidden by default */
+  }
+  
+  /* The "show" class is added to the filtered elements */
+  .show {
+    display: block;
+  }
+  
+  /* Style the buttons */
+  .btn {
+    border: none;
+    outline: none;
+    padding: 12px 16px;
+    background-color: #f1f1f1;
+    cursor: pointer;
+  }
+  
+  /* Add a light grey background on mouse-over */
+  .btn:hover {
+    background-color: #ddd;
+  }
+  
+  /* Add a dark background to the active button */
+  .btn.active {
+    background-color: rgb(22, 37, 121);
+    color: white;
+  }
+
+  #myBtnContainer{
+    margin-top: 40px;
+    margin-bottom: 20px;
+    margin-left: 10%;
+    margin-right: 8%;
+
+  }

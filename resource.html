@@ -1,14 +1,154 @@
 <!DOCTYPE html>
 <html>
+    <head>
+            <link rel="stylesheet" href="styles/style.css">
+    </head>
+    <body>
+    <header>
+    <h3>Mental Health Resources</h3>
     <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et facilisis sem, id consectetur elit. Phasellus id placerat eros. Vestibulum cursus dolor tellus, at congue augue sollicitudin ut. Curabitur condimentum massa a rutrum sollicitudin. Quisque pulvinar arcu at lectus ultricies eleifend. Maecenas et quam tincidunt, porttitor leo ac, sodales ex. Morbi consectetur felis augue, eu tempus nisi suscipit tincidunt. Praesent vulputate arcu vel orci feugiat pulvinar. Nunc eget hendrerit leo, sed pulvinar sapien. Fusce ultricies, augue elementum faucibus faucibus, risus metus blandit diam, non vulputate mauris sapien at dui. Suspendisse condimentum lectus a ultrices porta.
+        Institutions of higher education can have a profound effect on many students’ mental health. This is especially true for students with identities outside what is considered “normative” in a university setting. This can be first-generation or low-income students, students of color, LGBTQ+ students, etc. Despite the challenges you may face at university, your existence is an example of resiliency. Here are some resources to better help you explore and strengthen your own mental health.</p>
 
-<br>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Quisque pretium dictum risus, et iaculis arcu eleifend id. Donec sed arcu eu ante suscipit faucibus in ut elit. Mauris rhoncus vel purus et posuere. Curabitur quis tincidunt risus. Cras pellentesque, massa quis efficitur varius, turpis turpis eleifend metus, nec consequat dolor nunc sit amet dolor. Maecenas sollicitudin, ante cursus posuere mollis, justo dolor pharetra purus, sit amet varius enim nulla et odio. Aliquam erat volutpat. Ut congue dictum sapien, eget consectetur erat rhoncus vitae. Sed varius justo in nulla cursus, mattis congue dui porta. Vivamus euismod mattis urna quis condimentum. Nam vitae erat diam.
-
-<br>Nunc quis nisi venenatis, auctor felis nec, congue dui. Donec feugiat neque vitae ex rhoncus tristique. Donec ullamcorper iaculis eros, nec faucibus nisl consectetur ut. Curabitur metus lectus, commodo et turpis vitae, efficitur tempus nulla. Nam pulvinar augue vel tellus tempus, nec ultrices nisl rhoncus. Duis ultrices eu libero sed vehicula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Phasellus vitae lectus nec libero commodo rhoncus.
-
-<br>Donec ultrices ante et ipsum congue, vitae fringilla diam ultricies. Quisque a nisi et magna dignissim varius vitae eget ligula. Quisque scelerisque in lacus sit amet volutpat. Fusce at maximus neque. Nullam ut accumsan neque, eu placerat arcu. Integer dictum est sed suscipit rutrum. Cras tempus est et varius bibendum. Aliquam erat volutpat. In tincidunt nisi vel leo placerat, et maximus risus ultricies. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-
-<br>Nunc vel ornare leo, in viverra nibh. Morbi eu laoreet libero. Aliquam tempor rutrum consequat. Fusce vehicula, eros eu sodales rhoncus, libero lorem fermentum metus, vitae iaculis lectus nisi iaculis tellus. Nam quis ligula suscipit, tristique nunc ut, sodales neque. In facilisis tristique egestas. Sed nunc lectus, auctor nec commodo sit amet, tincidunt in risus. Sed cursus metus et urna venenatis, ac pretium tellus finibus. Mauris risus risus, blandit non fermentum ac, suscipit vitae urna. Nunc at euismod ipsum. Pellentesque pulvinar ligula nec nibh pharetra interdum. Praesent mauris neque, rutrum placerat sollicitudin a, suscipit non nunc. Aenean ut blandit lacus.
     </p>
+    </header>
+
+    <div id="myBtnContainer">
+        <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+        <button class="btn" onclick="filterSelection('free')"> Free</button>
+        <button class="btn" onclick="filterSelection('student run')"> Student Run</button>
+        <button class="btn" onclick="filterSelection('long term')"> Long Term</button>
+        <button class="btn" onclick="filterSelection('short term')"> Short Term</button>
+        <button class="btn" onclick="filterSelection('ucla affiliated')"> UCLA Affiliated</button>
+        <button class="btn" onclick="filterSelection('traditional counseling')"> Traditional Counseling</button>
+        <button class="btn" onclick="filterSelection('alt healing')"> Alternative Forms of Healing</button>
+        <button class="btn" onclick="filterSelection('culturally competent')"> Culturally Competent</button>
+      </div>
+
+
+
+      <div class="container">
+        <div class="filterDiv traditional counseling alt healing short term ucla affiliated free">Campus Assault Resources and Education (CARE)
+            <div class="resource_card">
+                <h4><a href="https://careprogram.ucla.edu/" target="_blank" rel="noopener noreferrer">Campus Assault Resources and Education (CARE)</a></h4>
+                <h5>Offers: Traditional Counseling, Alternative Forms of Healing, Short Term, UCLA Affiliated, Free</h4>
+                <p>CARE is committed to the eradication of sexual and gender-based violence through creating and sustaining a safe, healthy, and equitable community for all people. CARE strives to achieve this through provision of comprehensive prevention education, individual support and advocacy, and holistic healing programs for all members of the UCLA community.<br>
+                <br>
+                Address: 330 De Neve Dr. 205 Covel Commons, Los Angeles, CA, 90095
+                </p>
+            </div>
+        </div>
+
+        <div class="filterDiv free short term ucla affiliated alt healing">Collegiate Recovery Program
+            <div class="resource_card">
+                <h4><a href="https://collegiaterecovery.ucla.edu" target="_blank" rel="noopener noreferrer">Collegiate Recovery Program</a></h4>
+                <h5>Offers: Alternative Forms of Healing, Short Term, UCLA Affiliated, Free</h4>
+                <p>UCLA’s Collegiate Recovery Program (CRP) was formed in 2016 to provide support to UCLA students who are in recovery from substance use or other addictive behaviors. We are dedicated to providing academic, wellness, and emotional support to students who are in recovery or who are considering recovery.<br>
+                <br>
+                Address: Student Activities Center, Suite B44 220 Westwood Plaza Box 951453
+                </p>
+            </div>
+        </div>
+
+        <div class="filterDiv short term ucla affiliated traditional counseling">Counseling and Psychological Services (CAPS)
+            <div class="resource_card">
+                <h4><a href="https://counseling.ucla.edu/ " target="_blank" rel="noopener noreferrer">Counseling and Psychological Services (CAPS)</a></h4>
+                <h5>Offers: Short term, UCLA affiliated, Traditional Counseling</h4>
+                <p>Our services are designed to foster the development of health well-being necessary for success in a complex global environment. We are pleased to offer a variety of services to meet your needs including: Crisis counseling available by phone 24 hours a day/7 days a week, Emergency intervention, Individual counseling and psychotherapy, Group therapy, Psychiatric evaluation and treatment, Psychoeducational programs and workshops for students, staff and faculty, and Campus mental health and wellness promotion.
+                    <br>
+                <br>
+                Address: John Wooden Center West, 221 Westwood Plaza, Box 951556, Los Angeles, CA 90095-1556
+                </p>
+            </div>
+        </div>
+        
+        <div class="filterDiv long term ucla affiliated traditional counseling alt healing">PEERS Friendship Program
+            <div class="resource_card">
+                <h4><a href="https://www.semel.ucla.edu/peers/young-adults " target="_blank" rel="noopener noreferrer">PEERS Friendship Program</a></h4>
+                <h5>Offers: Long Term, UCLA affiliated, Traditional Counseling, Alternative forms of healing</h4>
+                <p>PEERS Boot Camps are designed to teach evidence-based social skills to anyone interested in learning more, including teens, adults, families, practitioners, and educators. Attendees are presented with targeted skills through didactic instruction, role-play demonstrations, and have the opportunity to practice the newly-learned skills through behavioral rehearsal exercises.
+                    <br>
+                <br>
+                Address: 300 UCLA Medical Plaza Los Angeles, CA 90095-6967
+                </p>
+            </div>
+            </div>
+        
+        <div class="filterDiv long term ucla affiliated traditional counseling">UCLA Psychology Clinic
+            <div class="resource_card">
+                <h4><a href="https://www.psych.ucla.edu/centers-programs/clinic/psychotherapy-counseling " target="_blank" rel="noopener noreferrer">UCLA Psychology Clinic</a></h4>
+                <h5>Offers: Long Term, UCLA affiliated, Traditional Counseling</h4>
+                <p>At the UCLA Psychology Clinic, we provide individualized, scientifically supported therapy. Our clients' concerns commonly include, but are not limited to: anxiety, depression, relationship and family problems, school problems, parenting difficulties, divorce and separation adjustment, career and personal decisions, childhood abuse, bereavement, and life transitions
+                    <br>
+                <br>
+                Address: 220 Westwood Plaza #105, Los Angeles, CA 90095
+                </p>
+            </div>
+        </div>
+        
+
+        
+        <div class="filterDiv long term short term traditional counseling culturally competent">Acacia
+            <div class="resource_card">
+                <h4><a href="https://acaciacw.com/westwood/" target="_blank" rel="noopener noreferrer">Acacia</a></h4>
+                <h5>Offers:  Long Term, Traditional Counseling, Culturally Competent</h4>
+                <p>Provide college students a safe, supportive space in which they receive quality and consistent mental health care that is highly accessible, affordable, specialized, and culturally sensitive.
+                <br>
+                <br>
+                Address: 1019 Gayley Ave | Floor 2 Los Angeles, CA 90024
+                </p>
+            </div>
+        </div>
+       
+        <div class="filterDiv student run free short term ucla affiliated traditional counseling alt healing culturally competent">Samahang Pilipino Education and Retention
+            <div class="resource_card">
+                <h4><a href="https://spearatucla.weebly.com/" target="_blank" rel="noopener noreferrer">Samahang Pilipino Education and Retention</a></h4>
+                <h5>Offers:  Student run, Free,  Short term, UCLA affiliated, Alternative forms of healing, Traditional Counseling, Culturally Rooted</h4>
+                <p>CARE is committed to the eradication of sexual and gender-based violence through creating and sustaining a safe, healthy, and equitable community for all people. CARE strives to achieve this through provision of comprehensive prevention education, individual support and advocacy, and holistic healing programs for all members of the UCLA community.<br>
+                <br>
+                Address: 220 Westwood Plaza #105, Los Angeles, CA 90095
+                </p>
+            </div>
+        </div>
+        
+        <div class="filterDiv student run free short term ucla affiliated traditional counseling alt healing culturally competent">MEChA Calmécac
+            <div class="resource_card">
+                <h4><a href="https://sites.google.com/site/calmecacucla/" target="_blank" rel="noopener noreferrer">MEChA Calmécac</a></h4>
+                <h5>Offers: Student run, Free, Short term, UCLA affiliated, Alternative forms of healing, Traditional Counseling, Culturally Rooted</h4>
+                <p>Telpochcalli provides a safe one-on-one safe space where any topic can be discussed. Meet one-on-one with a peer counselor regularly and at your availability throughout the quarter. The purpose of this component is to help student gain a quality education and develop holistically, and to promote academic and student empowerment.<br>
+                <br>
+                Address: 220 Westwood Plaza #105, Los Angeles, CA 90095
+                </p>
+            </div>
+        </div>
+        
+        <div class="filterDiv student run free short term ucla affiliated traditional counseling alt healing culturally competent">Retention of American Indians Now!
+            <div class="resource_card">
+                <h4><a href="https://uclarain.weebly.com/" target="_blank" rel="noopener noreferrer">Retention of American Indians Now!</a></h4>
+                <h5>Offers:  Student run, Free, Short term, UCLA affiliated, Alternative forms of healing, Traditional Counseling, Culturally Rooted</h4>
+                <p>Peer Counselors meet with students regularly throughout the quarter in 1on1 sessions. RAIN! Peer Counseling provides students with the support, tools, and resources that are essential to a student’s graduation. Staff are trained to aid in preventing academic difficulty, assist with academic planning, goal setting, personal development, and campus & community referrals.  <br>
+                <br>
+                Address: 220 Westwood Plaza #105, Los Angeles, CA 90095
+                </p>
+            </div>
+        </div>
+        
+        <div class="filterDiv student run free short term ucla affiliated traditional counseling alt healing culturally competent">Southeast Asian Campus Learning Education and Retention
+            <div class="resource_card">
+                <h4><a href="https://vsubruins.com/seaclear" target="_blank" rel="noopener noreferrer">Southeast Asian Campus Learning Education and Retention</a></h4>
+                <h5>Offers:  Student run, Free, Short term, UCLA affiliated, Alternative forms of healing, Traditional Counseling, Culturally Rooted</h4>
+                <p>Through 1-on-1 sessions, peer counselors help students with issues regarding academics, finances, community, & also with the student’s social, professional, and personal life. Peer Counseling provides a safe space for confidentiality and trust. With the resources to help you gain the knowledge needed to make your experience at UCLA successful, peer counselors are trained to challenge students to be empowered leaders.<br>
+                <br>
+                Address: 220 Westwood Plaza #105, Los Angeles, CA 90095 
+                </p>
+            </div>
+        </div>
+        
+
+      </div>
+
+    
+    <p></p>
+    <script src="js/resources.js"></script>
+    </body>
+
 </html>
