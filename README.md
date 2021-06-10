@@ -32,7 +32,7 @@ We provide JSON file of user data to be transparent and open-source. Users are w
 
 Link to website: https://kennl42.github.io/ASIAAM-191A-Final-Project/index.html
 
-##Screenshots With Features
+## Screenshots With Features
 ![](screenshots/screenshot1.png)
 ![](screenshots/screenshot3.png)
 ![](screenshots/screenshot4.png)
