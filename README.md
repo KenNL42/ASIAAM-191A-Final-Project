@@ -32,4 +32,4 @@ We provide JSON file of user data to be transparent and open-source. Users are w
 Link to website: https://kennl42.github.io/ASIAAM-191A-Final-Project/index.html
 
 ## How can it be repurposed
-As this is aimed towards UCLA students, our website is open for changes in order to fit the needs and other suitabilities of UCLA students as time passes. Documentation of this website and access to code will be open for the general public so that documentation and improvements made can help benefit a variety of people. This will also create long-term maintenance of the site and its evolving fundamentals as it changes for whatever suits the community best during the moment. 
+As this is aimed towards UCLA students, our website is open for changes in order to fit the needs and other suitabilities of UCLA students as time passes. Documentation of this website and access to code will be open for the general public so that documentation and improvements made can help benefit a variety of people. This will also create long-term maintenance of the site and its evolving fundamentals as it changes for whatever suits the community of Bruins best during the moment. 
