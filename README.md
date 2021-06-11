@@ -6,7 +6,7 @@
 * [Objective](#objective)
 * [Who is being empowered](#who-is-being-empowered)
 * [What technology was used](#what-technology-was-used)
-* [Screenshots and Features] (#screenshots-and-features
+* [Screenshots and Features] (#screenshots-and-features)
 * [How can it be Repurposed](#how-can-it-be-repurposed)
 
 ## Objective
