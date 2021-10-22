@@ -6,7 +6,7 @@ data.resourcelong <- access user reported resource location longitude
 */
 const map = L.map('map').setView([34.0709, -118.444], 5);
 
-const url = "https://spreadsheets.google.com/feeds/list/1RFDPVCED6oKJYgqE04U2lJbO4oSF_ECeC3GcbaKvoZg/o5hgy6r/public/values?alt=json"
+const url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRAvpuAmf00-N4sT70Of-UIiT0bf7EKlu2I854WCVp0y59pUqv6KjOFpFhsMAqcbHjY07mQLfFotYyW/pub?output=csv"
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
