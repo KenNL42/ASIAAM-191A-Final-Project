@@ -1,12 +1,12 @@
 /* NOTE:
-data.locationlat <- access users' location latitude
-data.locationlong <- access users' location longitude
+data.location_lat <- access users' location latitude
+data.location_long <- access users' location longitude
 data.resourcelat <- access user reported resource location latitude
 data.resourcelong <- access user reported resource location longitude
 */
 const map = L.map('map').setView([34.0709, -118.444], 5);
 
-const url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRAvpuAmf00-N4sT70Of-UIiT0bf7EKlu2I854WCVp0y59pUqv6KjOFpFhsMAqcbHjY07mQLfFotYyW/pub?output=csv"
+const url = "https://opensheet.elk.sh/1RFDPVCED6oKJYgqE04U2lJbO4oSF_ECeC3GcbaKvoZg/Form+Responses+1"
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -44,24 +44,24 @@ function addMarker(data){
       opacity: 1,
       fillOpacity: 0.8
   }
-  if(data.whichbestdescribeshowyouvebeenfeeling == "Positive"){
+  if(data["Which best describes how you've been feeling?"] == "Positive"){
       circleOptions.fillColor = "green"
-      feelingpositive.addLayer(L.circleMarker([data.locationlat,data.locationlong], circleOptions).
-      bindPopup(`<h3>${data.whatcitydoyoulive}</h3> <p>${"How I Handle my emotional well-being: " + data['whatdoyoudotomanageyouremotionalwell-being']}</p>`))
+      feelingpositive.addLayer(L.circleMarker([data.location_lat,data.location_long], circleOptions).
+      bindPopup(`<h3>${data["What city do you live?"]}</h3> <p>${"How I Handle my emotional well-being: " + data['whatdoyoudotomanageyouremotionalwell-being']}</p>`))
   }
- if(data.whichbestdescribeshowyouvebeenfeeling =="Neutral"){
+ if(data["Which best describes how you've been feeling?"] =="Neutral"){
    circleOptions.fillColor = "yellow"
-   feelingneutral.addLayer(L.circleMarker([data.locationlat,data.locationlong], circleOptions).
-   bindPopup(`<h3>${data.whatcitydoyoulive}</h3> <p>${"How I Handle my emotional well-being: " + data['whatdoyoudotomanageyouremotionalwell-being']}</p>`))
+   feelingneutral.addLayer(L.circleMarker([data.location_lat,data.location_long], circleOptions).
+   bindPopup(`<h3>${data["What city do you live?"]}</h3> <p>${"How I Handle my emotional well-being: " + data['whatdoyoudotomanageyouremotionalwell-being']}</p>`))
  }
- if(data.whichbestdescribeshowyouvebeenfeeling =="Negative"){
+ if(data["Which best describes how you've been feeling?"] =="Negative"){
   circleOptions.fillColor = "red"
-  feelingnegative.addLayer(L.circleMarker([data.locationlat,data.locationlong], circleOptions).
-  bindPopup(`<h3>${data.whatcitydoyoulive}</h3> <p>${"How I Handle my emotional well-being: " + data['whatdoyoudotomanageyouremotionalwell-being']}</p>`))
+  feelingnegative.addLayer(L.circleMarker([data.location_lat,data.location_long], circleOptions).
+  bindPopup(`<h3>${data["What city do you live?"]}</h3> <p>${"How I Handle my emotional well-being: " + data['whatdoyoudotomanageyouremotionalwell-being']}</p>`))
 }
-if(!data.resourcelat==0 || !data.resourcelong==0){
+if(!data.resource_lat==0 || !data.resource_long==0){
   circleOptions.fillColor = "blue"
-  resourcearea.addLayer(L.circleMarker([data.resourcelat,data.resourcelong], circleOptions).
+  resourcearea.addLayer(L.circleMarker([data.resource_lat,data.resource_long], circleOptions).
   bindPopup('<b>Users\' Physical Locations of Resources</b>'))
 }
   // return data.timestamp
@@ -155,18 +155,18 @@ function addResourcesMarker(){
 function addStories(data){
   
   // get rid of blank answer
-  if (!data.describeyouremotionalsocialwellbeinginasmuchdetailasyouarecomfortablewith) return;
+  if (!data["Describe your emotional/social wellbeing in as much detail as you are comfortable with"]) return;
   
   const newDiv = document.createElement("div");
   newDiv.className = "stories";
   newDiv.innerHTML = "<b>How Are You Doing?</b><br>";
-  newDiv.innerHTML += data.describeyouremotionalsocialwellbeinginasmuchdetailasyouarecomfortablewith;
+  newDiv.innerHTML += data["Describe your emotional/social wellbeing in as much detail as you are comfortable with"];
   newDiv.innerHTML += "<br><b><br>What's helped you?</b><br>";
-  newDiv.innerHTML += data['whatdoyoudotomanageyouremotionalwell-being'];
+  newDiv.innerHTML += data['What do you do to manage your emotional well-being?'];
 
   if (data.whichcampusresourcesifanyhaveyoufoundhelpfulinmanagingyourmentalhealth){
     newDiv.innerHTML += "<br><b><br>What campus resources have you used?</b><br>";
-    newDiv.innerHTML += data['whichcampusresourcesifanyhaveyoufoundhelpfulinmanagingyourmentalhealth'];
+    newDiv.innerHTML += data['Which campus resources, if any, have you found helpful in managing your mental health?'];
   }
 
   const spaceForStories = document.getElementById('snapshot')
@@ -179,7 +179,7 @@ function displayWellnessCount(data){
   // count all wellness status
   for (var i in data){
     // store wellness data
-    emotion = data[i]['whichbestdescribeshowyouvebeenfeeling'];
+    emotion = data[i]["Which best describes how you've been feeling?"];
     if (emotion != ""){
       if (wellness[emotion] == null){
         wellness[emotion] = 0;
@@ -205,7 +205,7 @@ function displayResourceCount(data){
   resource_dict = {}
   for (var i in data){
     // store wellness data
-    resource = data[i]['whichcampusresourcesifanyhaveyoufoundhelpfulinmanagingyourmentalhealth'];
+    resource = data[i]["Which campus resources, if any, have you found helpful in managing your mental health?"];
     resource_arr = resource.split(', ');
     
     // ignore blank data and "none"
@@ -230,17 +230,18 @@ function displayResourceCount(data){
 var global_formatted_data;
 function formatData(theData){
   const formattedData = [];
-  const rows = theData.feed.entry;
+  const rows = theData;
   for(const row of rows) {
     const formattedRow = {}
     for(const key in row) {
-      if(key.startsWith("gsx$")) {
-            formattedRow[key.replace("gsx$", "")] = row[key].$t;
-      }
+      // if(key.startsWith("gsx$")) {
+      //       formattedRow[key.replace("gsx$", "")] = row[key].$t;
+      // }
+      formattedRow[key] = row[key]
     }
     formattedData.push(formattedRow);
   }
-  // console.log(formattedData);
+  console.log(formattedData);
   formattedData.forEach(addMarker);
   formattedData.forEach(addStories);
 
